@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%; /* Make sure the root takes up the full height */
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr); 
+  grid-template-rows: repeat(20, 1fr); /* Input field on top, then the rest */
+  height: 100vh; /* Make the container take up the full viewport height */
+  width: 100vw;
+}
+
+.task-input {
+  grid-column: 1 / 16; /* Span across both columns */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #101011;
+}
+
+.task-input input {
+  width: 50%;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  margin-right: 12px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  background-color: #101011;
+  border-radius: 4px;
+  color: rgb(207, 208, 206);
+}
+
+.map-view {
+  grid-column: 1 / 16; /* Stays on the left side */
+  z-index: 1000;
+  grid-row: 2 / 21;
+  background-color: #101011;
+  display: flex; /* Flex ensures that the content fills the area */
+  justify-content: center;
+  align-items: center;
+}
+
+.task-list-header {
+  text-align: center;
+  grid-column: 16 / 21;
+  background-color: #1b1b1b;
+  grid-row: 1 / 2;
+  padding-top: 12px;
+  padding-bottom: 16px;
+  color: rgb(132,132,136);
+  padding-left: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'roboto slab';
+  border-radius: 12px 0% 0% 0%;
+}
+
+.task-list-header p {
+  font-size: 28px;
+  background-color: #1b1b1b;
+}
+
+.task-list {
+  grid-column: 16 / 21; /* Task list on the right */
+  grid-row: 2 / 21;
+  background-color: #1b1b1b;
+  height: 100%; /* Take up all the remaining height */
+  overflow-y: auto; /* Allows scrolling when task list overflows */
+  padding: 10px;
+  border-radius: 0% 0% 0% 12px;
+  box-shadow: 2px 0 5px -2px #888;
+}
+
+.delete-button {
+  margin-left: 20px;
+  padding: 4px;
+}
+
+.task-list .task {
+  color: rgb(132,132,136);
+  padding-left: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'roboto';
+}
